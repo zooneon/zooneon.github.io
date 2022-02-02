@@ -50,7 +50,8 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "deploy": "gatsby build && gh-pages -d public"
+    "predeploy": "gatsby build && cp CNAME ./public",
+    "deploy": "gh-pages -d public"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.10.7",
