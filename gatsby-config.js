@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `기록하고 공유하는 공간`,
-    description: `zooneon's dev log`,
+    title: `zooneon's dev log`,
+    description: `기록하고 공유하는 공간`,
     author: `zooneon`,
     authorTagline: '예비 개발자 권준원입니다.',
     social: {
@@ -64,7 +64,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `기록하고 공유하는 공간`,
+        name: `zooneon's dev log`,
         short_name: `zooneon's dev log`,
         start_url: `/`,
         background_color: `#663399`,
