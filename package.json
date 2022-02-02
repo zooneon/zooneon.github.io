@@ -3,7 +3,7 @@
   "private": true,
   "description": "A simple minimal starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Boy with Silver Wings <agney@outlook.in>",
+  "author": "zooneon <zooneonbot@gmail.com>",
   "dependencies": {
     "gatsby": "^2.23.3",
     "gatsby-image": "^2.4.7",
@@ -32,8 +32,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
+    "react-is": "^17.0.2",
     "react-share": "^4.2.0",
-    "styled-components": "^5.1.1",
+    "styled-components": "^5.3.3",
     "styled-theming": "^2.2.0",
     "typeface-oswald": "^1.1.4"
   },

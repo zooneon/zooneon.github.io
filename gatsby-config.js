@@ -60,16 +60,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-gtag`,
       options: {
-        trackingId: G - PB788GF0S1,
+        trackingId: `G-PB788GF0S1`,
         anonymize: true,
         head: true,
       },
     },
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: `gatsby-plugin-robots-txt`,
       options: {
-        host: 'https://www.zooneon.dev',
-        sitemap: 'https://www.zooneon.dev/sitemap.xml',
+        host: `https://www.zooneon.dev`,
+        sitemap: `https://www.zooneon.dev/sitemap.xml`,
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
