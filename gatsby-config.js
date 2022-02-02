@@ -4,6 +4,7 @@ module.exports = {
     description: `기록하고 공유하는 공간`,
     author: `zooneon`,
     authorTagline: '예비 개발자 권준원입니다.',
+    siteUrl: `https://zooneon.dev`,
     social: {
       github: `zooneon`,
       instagram: `zooneon`,
@@ -56,9 +57,19 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-catch-links`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-gtag`,
       options: {
-        //trackingId: `TRACKING ID`,
+        trackingId: G - PB788GF0S1,
+        anonymize: true,
+        head: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.zooneon.dev',
+        sitemap: 'https://www.zooneon.dev/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
     {
@@ -74,5 +85,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    `gatsby-plugin-advanced-sitemap`,
   ],
 };
