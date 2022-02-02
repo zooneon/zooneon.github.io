@@ -7,6 +7,7 @@ import media from '../utils/media';
 import github from '../images/social/github.svg';
 import instagram from '../images/social/instagram.svg';
 import mail from '../images/social/mail.svg';
+import notion from '../images/social/notion.svg';
 
 const Container = styled.div`
   display: flex;
@@ -51,8 +52,8 @@ const TagLine = styled.sub`
 `;
 
 const SocialIcon = styled.img`
-  height: 2rem;
-  width: 2rem;
+  height: 2.5rem;
+  width: 2.5rem;
   padding: 1.5rem 1rem;
 `;
 
@@ -86,6 +87,13 @@ const Bio = () => (
               rel="noopener noreferrer"
             >
               <SocialIcon src={mail} alt="mail" />
+            </a>
+            <a
+              href={`https://www.notion.so`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SocialIcon src={notion} alt="notion" />
             </a>
           </TextContainer>
           <ImageContainer>

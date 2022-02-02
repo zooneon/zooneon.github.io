@@ -32,7 +32,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Oswald', sans-serif;
+    font-family: sans-serif;
   }
 
   h2 {
@@ -92,7 +92,7 @@ class Layout extends Component {
             }
           }
         `}
-        render={data => (
+        render={(data) => (
           <>
             <Header title={data.site.siteMetadata.title} />
             <Content>{children}</Content>

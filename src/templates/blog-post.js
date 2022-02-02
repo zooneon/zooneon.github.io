@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { Container, Title, LinkList, Header } from './post-styles';
 import Share from '../components/share';
+import StyledLink from '../utils/styled-link';
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -45,16 +46,16 @@ class BlogPostTemplate extends React.Component {
           <LinkList>
             <li>
               {previous && (
-                <Link to={previous.fields.slug} rel="prev">
+                <StyledLink to={previous.fields.slug} rel="prev">
                   ← {previous.frontmatter.title}
-                </Link>
+                </StyledLink>
               )}
             </li>
             <li>
               {next && (
-                <Link to={next.fields.slug} rel="next">
+                <StyledLink to={next.fields.slug} rel="next">
                   {next.frontmatter.title} →
-                </Link>
+                </StyledLink>
               )}
             </li>
           </LinkList>
