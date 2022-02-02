@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.zooneon.dev/sitemap.xml
+Host: https://www.zooneon.dev
