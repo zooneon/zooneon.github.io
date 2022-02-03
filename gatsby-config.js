@@ -58,11 +58,14 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-catch-links`,
     {
-      resolve: `gatsby-plugin-gtag`,
+      resolve: `gatsby-plugin-gdpr-tracking`,
       options: {
-        trackingId: `G-PB788GF0S1`,
-        anonymize: true,
-        head: true,
+        googleAnalytics: {
+          trackingId: `G-PB788GF0S1`,
+        },
+        googleAds: {
+          trackingId: `ca-pub-8820567915675763`,
+        },
       },
     },
     {
