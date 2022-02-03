@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Utterances from '../components/utterances';
 import { Container, Title, LinkList, Header } from './post-styles';
 import Share from '../components/share';
 import StyledLink from '../utils/styled-link';
@@ -36,13 +37,6 @@ class BlogPostTemplate extends React.Component {
             `}
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
-          <Share
-            post={{
-              title: post.frontmatter.title,
-              excerpt: post.excerpt,
-              author: author,
-            }}
-          />
           <LinkList>
             <li>
               {previous && (
@@ -59,6 +53,14 @@ class BlogPostTemplate extends React.Component {
               )}
             </li>
           </LinkList>
+          <Utterances />
+          <Share
+            post={{
+              title: post.frontmatter.title,
+              excerpt: post.excerpt,
+              author: author,
+            }}
+          />
         </Container>
       </Layout>
     );
