@@ -1,6 +1,6 @@
 ---
 title: 'Spring Boot profile 설정하기'
-date: '2022-04-7T18:05:09.284Z'
+date: '2022-04-07T18:05:09.284Z'
 ---
 
 스프링 부트에서는 properties파일(application.properties)이나 yaml파일(application.yaml)을 사용하여 프로젝트에 원하는 설정들을 적용하거나 수정할 수 있다.
