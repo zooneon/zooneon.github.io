@@ -122,7 +122,7 @@ Parameter Store은 `AWS System Manager → Parameter Store`에서 생성할 수 
 
 ## Parameter Store 등록
 
-![parameter store](https://user-images.githubusercontent.com/59433441/162745455-18a6f280-c2c8-4aea-b365-f12ab6b4e029.png)
+![parameter store2](https://user-images.githubusercontent.com/59433441/162748673-5efb91a8-6f3e-4e3a-8010-cc7f4846cd76.png)
 
 파라미터는 이름, 타입, 값만 설정하면 쉽게 등록할 수 있다.
 
@@ -164,7 +164,7 @@ dependencyManagement {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-		//...
+	//...
     //parameter store
     implementation 'io.awspring.cloud:spring-cloud-starter-aws-parameter-store-config'
 }
@@ -200,13 +200,13 @@ aws:
 
 ### aws.paramstore 속성
 
-`**prefix**` 
+**`prefix`** 
 
 - 파라미터의 prefix를 설정할 수 있다.
 - prefix는 슬래시(`/`)로 시작해야 한다.
 - default : /config
 
-`**defaultContext**`
+**`defaultContext`**
 
 - 모든 서비스에서 공유되는 속성을 정의하는 컨텍스트 이름이다.
 - default : application
@@ -219,13 +219,13 @@ aws:
 - dot(`.`), dash(`-`), forward slash(`/`), backward slash(`\`), underscore(`_`)만 사용 가능하다.
 - default : underscore(`_`)
 
-`**failFast**`
+**`failFast`**
 
 - 파라미터를 읽지 못했을 때 어떻게 할지 결정한다.
 - true이면 어플리케이션을 실행하지 못하도록 한다.
 - default : true
 
-`**name**`
+**`name`**
 
 - 파라미터의 식별자 어플리케이션 이름이다.
 - 파라미터를 어떤 어플리케이션에 적용할 건지 지정할 수 있다.
@@ -233,7 +233,7 @@ aws:
 - 위 속성마저 존재하지 않으면 default 값을 사용한다.
 - default : application
 
-`**enabled**`
+**`enabled`**
 
 - Parameter Store를 사용할지 선택한다.
 - default : true
