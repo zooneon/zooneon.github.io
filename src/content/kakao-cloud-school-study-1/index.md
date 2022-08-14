@@ -35,7 +35,7 @@ date: '2022-08-14T20:48:20.244Z'
 
 팀원 개인 회고와 팀 전체 회고를 진행하였다.
 
-<img width="1421" alt="스크린샷 2022-08-14 오후 8 41 32" src="https://user-images.githubusercontent.com/59433441/184540124-888cfa9d-a77a-4590-af34-7f6d7df4d289.png">
+<img width="800" alt="스크린샷 2022-08-14 오후 8 41 32" src="https://user-images.githubusercontent.com/59433441/184540124-888cfa9d-a77a-4590-af34-7f6d7df4d289.png">
 
 
 <br/>
