@@ -3,17 +3,19 @@ title: '다중 가용 영역 기반의 쿠버네티스 클러스터'
 date: '2022-11-12T22:11:20.635Z'
 ---
 
+## 개요
+
 카카오클라우드 스쿨에서 다중 가용 영역 기반의 쿠버네티스 클러스터 구축 프로젝트를 진행하고 있다.
 
 아키텍처를 설계하기 위해 자료를 찾으면서 정리한 내용들을 기록해보려 한다.
 
-## 우리는 왜 여러 개의 Availability Zone에 클러스터를 구축해야 할까?
+## 왜 여러 개의 Availability Zone에 클러스터를 구축해야 할까?
 
-하나의 Availability Zone에 쿠버네티스 클러스터를 구축하는 것은 node failure가 발생해도 안정적으로 서비스를 운영할 수 있지만 zone failure에 대한 가용성은 보장하지 않는다. 
+하나의 Availability Zone에 쿠버네티스 클러스터를 구축하는 것은 node failure가 발생해도 안정적으로 서비스를 운영할 수 있지만 zone failure에 대한 가용성은 보장하지 않는다.
 
 따라서 zone failure가 발생해도 안정적으로 서비스를 운영하기 위해서는 다중 Availability Zone을 이용해야 한다.
 
-## 우리는 왜 3개의 Availability Zone을 이용할까?
+## 왜 3개의 Availability Zone을 이용할까?
 
 우선 쿠버네티스 [공식문서](https://kubernetes.io/docs/setup/best-practices/multiple-zones/)에 따르면 쿠버네티스를 multiple zone에서 운영할 경우 control plane은 각기 다른 zone에 있어야 하고, 가용성이 우선이라면 적어도 3개의 zone을 선택할 것을 권장하고 있다.
 
@@ -49,7 +51,7 @@ HA를 위해서 etcd를 컴포넌트로 갖고 있는 control plane 또한 클�
 
 EBS의 경우 [EC2와 같은 zone에 있어야 하므로](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes.html) Auto Scaling Group을 각 AZ마다 생성할 수 있다.
 
-(물론 여러 AZ에 하나의 ASG를 생성할 수 있지만 이에 따른 문제는 아래에 작성하였다.) 
+(물론 여러 AZ에 하나의 ASG를 생성할 수 있지만 이에 따른 문제는 아래에 작성하였다.)
 
 worker 노드 그룹(하나의 ASG)에서 레이블을 사용하여 해당 가용 영역의 노드에 pod를 예약할 수 있다.
 
