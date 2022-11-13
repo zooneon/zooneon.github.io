@@ -4,6 +4,9 @@ import media from '../utils/media';
 
 export const Container = styled.article`
   margin-top: 8rem;
+  img {
+    width: 100%;
+  }
 
   ${media.phone`
     margin-top: 4rem;
