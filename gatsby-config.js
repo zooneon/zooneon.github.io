@@ -1,15 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `zooneon.dev`,
+    title: `zooneon's dev log`,
     description: `기록하고 공유하는 공간`,
     author: `zooneon`,
     authorTagline: '예비 개발자 권준원입니다.',
-    siteUrl: `https://zooneon.dev`,
+    siteUrl: `https://blog.zooneon.dev`,
     social: {
       github: `zooneon`,
       instagram: `zooneon`,
       mail: `zooneonbot@gmail.com`,
-      notion: ``,
+      notion: `https://zzooneon.notion.site/69fa5b3ed63d4963bdf00167d7bc68d0`,
     },
   },
   plugins: [
@@ -71,16 +71,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
-        host: `https://www.zooneon.dev`,
-        sitemap: `https://www.zooneon.dev/sitemap.xml`,
+        host: `https://www.blog.zooneon.dev`,
+        sitemap: `https://www.blog.zooneon.dev/sitemap.xml`,
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `zooneon.dev`,
-        short_name: `zooneon.dev`,
+        name: `blog.zooneon.dev`,
+        short_name: `blog.zooneon.dev`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
