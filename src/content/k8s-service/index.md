@@ -164,7 +164,7 @@ lb-service   LoadBalancer   10.107.254.85   192.168.0.181   80:31203/TCP   9s
 
 → `EXTERNAL-IP`가 생성되고 해당 IP를 통해 파드에 접근 가능
 
-→ `EXTERNAL-IP`로 요청을 보내면 트래픽은 노드의 31203번 포트로 들어온 뒤 `CLUSTER-IP:PORT(10.107.254.85:80)`를 통해 파드의 targetPort로 들어감
+→ `EXTERNAL-IP`로 요청을 보내면 트래픽은 노드의 31203번 포트로 들어온 뒤 파드의 targetPort로 들어감
 
 ### ExternalName
 
