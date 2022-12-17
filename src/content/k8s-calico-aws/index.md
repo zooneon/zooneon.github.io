@@ -1,5 +1,5 @@
 ---
-title: '쿠버네티스에서 Calico 사용하기 with AWS'
+title: '쿠버네티스에서 Calico 사용하기 in AWS'
 date: '2022-11-22T00:03:12.421Z'
 ---
 
