@@ -275,3 +275,9 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 # ens5 인터페이스가 아닌 tunl0 인터페이스로 변경
 192.168.189.78  10.0.3.78       255.255.255.192 UG    0      0        0 tunl0
 ```
+
+---
+
+참고
+
+- [https://projectcalico.docs.tigera.io/reference/public-cloud/aws](https://projectcalico.docs.tigera.io/reference/public-cloud/aws)
