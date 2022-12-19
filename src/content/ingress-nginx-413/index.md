@@ -57,7 +57,7 @@ kind: Ingress
 metadata:
   annotations:
     nginx.ingress.kubernetes.io/proxy-body-size: 100m
-		...
+    ...
 ```
 
 ### 결론
@@ -82,7 +82,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/proxy-body-size: 100m
-		...
+    ...
 ```
 
 다시 요청을 시도해 보면 정상적으로 처리하고 있음을 확인할 수 있다.
