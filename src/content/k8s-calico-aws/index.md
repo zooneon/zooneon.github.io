@@ -239,6 +239,8 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 
 위에서 언급했던 것처럼 Direct 모드는 패킷에 파드 IP를 그대로 사용하는데, 게이트웨이는 해당 IP가 호스트 네트워크 IP가 아니기 때문이다.
 
+### CrossSubnet 모드 사용
+
 이를 해결하기 위해 서브넷 간 통신에서만 IP-in-IP 기능을 활성화 할 수 있는 `CrossSubnet` 기능을 이용하면 된다.
 
 `CrossSubnet` 기능을 이용하면 서브넷 내에서는 Direct 모드를 사용하고, 서브넷 간 통신에서는 IP-in-IP 모드를 사용한다.
