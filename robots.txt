@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.blog.zooneon.dev/sitemap.xml
-Host: https://www.blog.zooneon.dev
+Sitemap: https://blog.zooneon.dev/sitemap.xml
+Host: https://blog.zooneon.dev
