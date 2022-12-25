@@ -9,7 +9,7 @@ date: '2022-12-26T02:13:42.635Z'
 
 먼저 `HPA`를 이용하여 파드 스케일링이 가능하도록 하였지만, 노드에 리소스가 없을 경우 스케일 아웃된 파드가 스케줄되지 못하고 `Pending` 상태에 남게 되는 문제가 발생하였다.
 
-이를 해결하기 위해 `[Cluster Autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler)`를 도입하였다.
+이를 해결하기 위해 [Cluster Autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler)를 도입하였다.
 
 `Cluster Autoscaler`에 대해 간단히 설명하자면 클러스터의 상태를 감시하고 있다가 필요한 경우 클라우드 프로바이더의 오토스케일링 서비스를 이용하여 노드 스케일링을 진행한다.
 
