@@ -89,7 +89,7 @@ const Bio = () => (
               <SocialIcon src={mail} alt="mail" />
             </a>
             <a
-              href={`https://www.notion.so`}
+              href={`${social.notion}`}
               target="_blank"
               rel="noopener noreferrer"
             >
