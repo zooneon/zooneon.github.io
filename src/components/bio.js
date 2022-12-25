@@ -7,7 +7,7 @@ import media from '../utils/media';
 import github from '../images/social/github.svg';
 import instagram from '../images/social/instagram.svg';
 import mail from '../images/social/mail.svg';
-import notion from '../images/social/notion.svg';
+import cv from '../images/social/cv.svg';
 
 const Container = styled.div`
   display: flex;
@@ -93,7 +93,7 @@ const Bio = () => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              <SocialIcon src={notion} alt="notion" />
+              <SocialIcon src={cv} alt="notion" />
             </a>
           </TextContainer>
           <ImageContainer>
