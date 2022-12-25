@@ -3,11 +3,11 @@ module.exports = {
     title: `zooneon's dev log`,
     description: `기록하고 공유하는 공간`,
     author: `zooneon`,
-    authorTagline: '예비 개발자 권준원입니다.',
+    authorTagline: '신입 엔지니어 권준원입니다.',
     siteUrl: `https://blog.zooneon.dev`,
     social: {
       github: `zooneon`,
-      instagram: `zooneon`,
+      instagram: `zooneon.dev`,
       mail: `zooneonbot@gmail.com`,
       notion: `https://zzooneon.notion.site/69fa5b3ed63d4963bdf00167d7bc68d0`,
     },
