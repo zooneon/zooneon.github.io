@@ -71,8 +71,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
-        host: `https://www.blog.zooneon.dev`,
-        sitemap: `https://www.blog.zooneon.dev/sitemap.xml`,
+        host: `https://blog.zooneon.dev`,
+        sitemap: `https://blog.zooneon.dev/sitemap.xml`,
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
