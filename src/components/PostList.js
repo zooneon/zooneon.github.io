@@ -5,6 +5,9 @@ import {
   cardBackgroundColor,
   cardBorderColor,
   textColor,
+  tagBackgroundColor,
+  tagTextColor,
+  tagHoverBackgroundColor,
 } from '../utils/theme';
 
 const PostListContainer = styled.div`
@@ -76,16 +79,16 @@ const PostTags = styled.div`
 const PostTag = styled(Link)`
   font-size: 0.85rem;
   padding: 0.2rem 0.6rem;
-  background-color: ${(props) =>
-    props.theme.mode === 'light' ? '#f5f5f5' : '#444'};
-  color: ${(props) => (props.theme.mode === 'light' ? '#666' : '#e0e0e0')};
+  background-color: ${tagBackgroundColor};
+  color: ${tagTextColor};
   border-radius: 3px;
   text-decoration: none;
   transition: all 0.2s ease;
+  border: 1px solid
+    ${(props) => (props.theme.mode === 'light' ? '#eee' : '#444')};
 
   &:hover {
-    background-color: ${(props) =>
-      props.theme.mode === 'light' ? '#3498db' : '#64b5f6'};
+    background-color: ${tagHoverBackgroundColor};
     color: white;
   }
 `;
