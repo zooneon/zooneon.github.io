@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 import { navigate } from 'gatsby';
 import styled from 'styled-components';
 import media from '../utils/media';
-import {
-  tagBackgroundColor,
-  tagTextColor,
-  searchInputBackgroundColor,
-} from '../utils/theme';
+import { tagTextColor, searchInputBackgroundColor } from '../utils/theme';
 
 const SearchContainer = styled.div`
   margin: 2rem 0;
