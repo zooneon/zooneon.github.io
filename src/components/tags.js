@@ -14,13 +14,6 @@ const TagList = styled.div`
   gap: 0.8rem;
 `;
 
-const TagHeader = styled.h3`
-  font-size: 1.8rem;
-  margin: 0 0 1.5rem 0;
-  color: #333;
-  font-weight: 600;
-`;
-
 const Tag = styled(Link)`
   background: ${tagBackgroundColor};
   padding: 0.7rem 1rem;
