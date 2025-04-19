@@ -1,6 +1,7 @@
 ---
 title: 'AWS에서 쿠버네티스 클러스터 구축하기'
 date: '2022-12-14T17:10:30.645Z'
+tags: ['kubernetes', 'aws']
 ---
 
 ### 개요
@@ -166,6 +167,7 @@ ip-10-0-3-xxx.ap-northeast-2.compute.internal
 3가지 경우에 맞게 configuration 파일을 적용한다.
 
 - control plane 생성
+
   ```yaml
   # control-plane.yaml
   apiVersion: kubeadm.k8s.io/v1beta2
@@ -200,14 +202,19 @@ ip-10-0-3-xxx.ap-northeast-2.compute.internal
     kubeletExtraArgs:
       cloud-provider: aws # cloud-provider 옵션 추가
   ```
+
   아래와 같은 명령으로 configuration 파일을 적용한다.
+
   ```bash
   $ kubeadm init --config control-plane.yaml
   ```
+
   만약 HA를 구성한다면 다음 명령을 사용한다.
+
   ```bash
   $ kubeadm init --config control-plane.yaml --upload-certs
   ```
+
 - HA를 위해 다수의 control plane을 이용
   ```yaml
   # control-plane-join.yaml

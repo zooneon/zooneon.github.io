@@ -1,6 +1,7 @@
 ---
 title: 'AWS CodeDeploy를 이용한 자동 배포 시 환경변수 주입하기 + Spring Boot'
 date: '2022-04-11T22:03:10.324Z'
+tags: ['aws']
 ---
 
 > 해당 글은 AWS CodeDeploy 구축 과정을 설명하지 않습니다.
@@ -26,7 +27,7 @@ java.lang.RuntimeException: Driver com.mysql.cj.jdbc.Driver claims to not accept
 	...
 ```
 
-개발 서버에서 사용할 데이터베이스 url과 username, password를 모두 공개해 놓으면 악의를 가진 사용자가 이를 활용해 데이터베이스를 마음대로 조작할 수 있기 때문에 환경변수로 처리하였다. 
+개발 서버에서 사용할 데이터베이스 url과 username, password를 모두 공개해 놓으면 악의를 가진 사용자가 이를 활용해 데이터베이스를 마음대로 조작할 수 있기 때문에 환경변수로 처리하였다.
 
 ~~물론 그렇게 관심 가질만한 프로젝트는 아니지만 혹시나 해서~~
 
@@ -126,7 +127,7 @@ Parameter Store은 `AWS System Manager → Parameter Store`에서 생성할 수 
 
 파라미터는 이름, 타입, 값만 설정하면 쉽게 등록할 수 있다.
 
-여기서 이름(`Name`)은 슬래시(`/`)를 사용한 계층 구조를 사용한다. 
+여기서 이름(`Name`)은 슬래시(`/`)를 사용한 계층 구조를 사용한다.
 
 `ex) /config/zooneon_dev/DATABASE_PASSWORD`
 
@@ -180,7 +181,7 @@ spring:
   config:
     activate:
       on-profile: dev
-		# aws-parameterstore: 추가
+    # aws-parameterstore: 추가
     import: 'aws-parameterstore:'
   datasource:
     url: ${DATABASE_URL}
@@ -200,7 +201,7 @@ aws:
 
 ### aws.paramstore 속성
 
-**`prefix`** 
+**`prefix`**
 
 - 파라미터의 prefix를 설정할 수 있다.
 - prefix는 슬래시(`/`)로 시작해야 한다.
@@ -214,7 +215,7 @@ aws:
 **`profileSeparator`**
 
 - 여러 환경에 배포할 수 있게 구분자를 사용할 수 있다.
-- profile은  `spring.config.activate.on-profile` 속성에 설정된 값을 사용한다.
+- profile은 `spring.config.activate.on-profile` 속성에 설정된 값을 사용한다.
 - profile이 존재하지 않으면 사용되지 않는다.
 - dot(`.`), dash(`-`), forward slash(`/`), backward slash(`\`), underscore(`_`)만 사용 가능하다.
 - default : underscore(`_`)

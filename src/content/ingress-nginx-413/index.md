@@ -1,6 +1,7 @@
 ---
 title: 'Ingress nginx 413 에러 해결하기'
 date: '2022-12-19T16:46:38.375Z'
+tags: ['kubernetes']
 ---
 
 ### 개요

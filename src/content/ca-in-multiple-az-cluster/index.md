@@ -1,7 +1,7 @@
 ---
 title: '다중 가용 영역 클러스터에 Cluster Autoscaler 도입하기'
 date: '2022-12-26T02:13:42.635Z'
-tags: ['kubernetes', 'aws', 'cluster-autoscaler', 'autoscaling']
+tags: ['kubernetes', 'aws', 'cluster-autoscaler']
 ---
 
 ### 개요

@@ -1,7 +1,7 @@
 ---
 title: '쿠버네티스에서 Calico 사용하기 in AWS'
 date: '2022-11-22T00:03:12.421Z'
-tags: ['kubernetes', 'aws', 'calico', 'cni', 'networking']
+tags: ['kubernetes', 'aws', 'calico', 'cni']
 ---
 
 AWS EC2를 이용하여 쿠버네티스 클러스터를 구축하고 CNI 플러그인으로 Calico를 사용하기 위해서는 몇 가지 설정이 필요하다.
