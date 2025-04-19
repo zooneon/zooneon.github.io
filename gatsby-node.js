@@ -1,16 +1,28 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const readingTime = require('reading-time');
 
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
     type MarkdownRemark implements Node {
       frontmatter: Frontmatter
+      fields: Fields
     }
     type Frontmatter {
       title: String!
       date: Date! @dateformat
       tags: [String]
+    }
+    type Fields {
+      slug: String!
+      readingTime: ReadingTime
+    }
+    type ReadingTime {
+      text: String
+      minutes: Float
+      time: Int
+      words: Int
     }
   `;
   createTypes(typeDefs);
@@ -89,6 +101,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: `slug`,
       node,
       value,
+    });
+
+    // 읽기 시간 계산 및 필드 추가
+    const timeToRead = readingTime(node.internal.content);
+    createNodeField({
+      name: `readingTime`,
+      node,
+      value: timeToRead,
     });
   }
 };
