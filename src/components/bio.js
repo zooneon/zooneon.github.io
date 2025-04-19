@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
-import Image from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import media from '../utils/media';
 import github from '../images/social/github.svg';
@@ -73,6 +73,7 @@ const Bio = () => (
     query={bioQuery}
     render={(data) => {
       const { author, authorTagline, social } = data.site.siteMetadata;
+      const avatar = getImage(data.avatar.childImageSharp.gatsbyImageData);
       return (
         <Container>
           <TextContainer>
@@ -104,7 +105,7 @@ const Bio = () => (
             </SocialIconWrapper>
           </TextContainer>
           <ImageContainer>
-            <Image fixed={data.avatar.childImageSharp.fixed} alt={author} />
+            <GatsbyImage image={avatar} alt={author} />
           </ImageContainer>
         </Container>
       );
@@ -116,9 +117,7 @@ const bioQuery = graphql`
   query BioQuery {
     avatar: file(absolutePath: { regex: "/icon.png/" }) {
       childImageSharp {
-        fixed(width: 100, height: 100) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(width: 100, height: 100, layout: FIXED)
       }
     }
     site {

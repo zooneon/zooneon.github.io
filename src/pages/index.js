@@ -37,8 +37,8 @@ class BlogIndex extends Component {
 
 export const Head = () => (
   <Seo
-    title="zooneon's dev log"
-    keywords={[`gatsby`, `blog`, `spring`, `zooneon`]}
+    title="zooneon's log"
+    keywords={[`gatsby`, `blog`, `devops`, `zooneon`, `kubernetes`, `aws`]}
   />
 );
 
@@ -51,7 +51,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
           id
