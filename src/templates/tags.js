@@ -1,0 +1,79 @@
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import styled from 'styled-components';
+import { PostList } from '../components/PostList';
+
+const TagHeader = styled.div`
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+`;
+
+const TagTitle = styled.h1`
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+`;
+
+const TagSymbol = styled.span`
+  color: #3498db;
+  font-weight: normal;
+`;
+
+const TagDescription = styled.p`
+  color: #777;
+  font-size: 1.2rem;
+  margin: 0;
+`;
+
+const TagTemplate = ({ data, pageContext }) => {
+  const { tag } = pageContext;
+  const { edges, totalCount } = data.allMarkdownRemark;
+  const tagHeader = `${totalCount}개의 포스트가 이 태그에 해당됩니다`;
+
+  return (
+    <Layout>
+      <SEO title={`"${tag}" 태그의 포스트 목록`} />
+      <TagHeader>
+        <TagTitle>
+          <TagSymbol>#</TagSymbol>
+          {tag}
+        </TagTitle>
+        <TagDescription>{tagHeader}</TagDescription>
+      </TagHeader>
+      <PostList posts={edges} />
+    </Layout>
+  );
+};
+
+export default TagTemplate;
+
+export const pageQuery = graphql`
+  query ($tag: String) {
+    allMarkdownRemark(
+      limit: 2000
+      sort: { frontmatter: { date: DESC } }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
+    ) {
+      totalCount
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "YYYY년 MM월 DD일")
+            title
+            tags
+          }
+        }
+      }
+    }
+  }
+`;

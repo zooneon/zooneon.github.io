@@ -5,16 +5,17 @@ import styled from 'styled-components';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Bio from '../components/bio';
-import Post from '../components/post';
+import { PostList } from '../components/PostList';
 import media from '../utils/media';
 
 const Title = styled.h3`
   font-weight: 800;
   font-size: 2.6rem;
-  margin: 6rem 0 0;
+  margin: 6rem 0 2rem;
+  color: #333;
 
   ${media.phone`
-    margin: 3rem 0 0;
+    margin: 3rem 0 1.5rem;
   `}
 `;
 
@@ -24,13 +25,14 @@ class BlogIndex extends Component {
     const posts = data.allMarkdownRemark.edges;
     return (
       <Layout>
-        <SEO title="zooneon's dev log" keywords={[`gatsby`, `blog`, `spring`, `zooneon`]} />
+        <SEO
+          title="zooneon's dev log"
+          keywords={[`gatsby`, `blog`, `spring`, `zooneon`]}
+        />
         <Bio />
         <main>
           <Title>Latest Posts</Title>
-          {posts.map(({ node }) => {
-            return <Post key={node.id} node={node} />;
-          })}
+          <PostList posts={posts} />
         </main>
       </Layout>
     );
@@ -58,8 +60,9 @@ export const pageQuery = graphql`
             }
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY년 MM월 DD일")
             title
+            tags
           }
         }
       }

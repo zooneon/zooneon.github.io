@@ -1,15 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `zooneon's dev log`,
+    title: `zooneon's log`,
     description: `기록하고 공유하는 공간`,
     author: `zooneon`,
-    authorTagline: '신입 엔지니어 권준원입니다.',
+    authorTagline: 'DevOps Engineer',
     siteUrl: `https://blog.zooneon.dev`,
     social: {
       github: `zooneon`,
-      instagram: `zooneon.dev`,
+      linkedin: `junwon-kwon-b4770025b`,
       mail: `zooneonbot@gmail.com`,
-      notion: `https://zzooneon.notion.site/69fa5b3ed63d4963bdf00167d7bc68d0`,
     },
   },
   plugins: [
@@ -52,22 +51,12 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-catch-links`,
-    {
-      resolve: `gatsby-plugin-gdpr-tracking`,
-      options: {
-        googleAnalytics: {
-          trackingId: `G-PB788GF0S1`,
-        },
-        googleAds: {
-          trackingId: `ca-pub-8820567915675763`,
-        },
-      },
-    },
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
@@ -89,6 +78,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    `gatsby-plugin-advanced-sitemap`,
+    `gatsby-plugin-sitemap`,
   ],
 };

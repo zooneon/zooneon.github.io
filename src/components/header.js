@@ -11,6 +11,15 @@ const Container = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  transition: box-shadow 0.3s ease;
+
+  &.scrolled {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+  }
 `;
 
 const Title = styled.h1`
@@ -25,13 +34,32 @@ const Title = styled.h1`
   `}
 `;
 
-const Header = ({ title }) => (
-  <Container>
-    <StyledLink to={'/'}>
-      <Title>{title}</Title>
-    </StyledLink>
-  </Container>
-);
+const Header = ({ title }) => {
+  const [scrolled, setScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
+
+  return (
+    <Container className={scrolled ? 'scrolled' : ''}>
+      <StyledLink to={'/'}>
+        <Title>{title}</Title>
+      </StyledLink>
+    </Container>
+  );
+};
 
 Header.defaultProps = {
   title: '',

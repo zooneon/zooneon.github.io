@@ -4,6 +4,8 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
+import Tags from './tags';
+import Search from './search';
 import media from '../utils/media';
 
 const GlobalStyles = createGlobalStyle`
@@ -50,15 +52,22 @@ const GlobalStyles = createGlobalStyle`
   code {
     font-family: Menlo,Monaco,"Courier New",Courier,monospace;
     word-break: break-word;
+    background-color: #7F8487;
+    color: #666;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9em;
   }
 
   pre code {
     word-break: normal;
+    background-color: transparent;
+    padding: 0;
   }
 
   :not(pre) > code[class*="language-"], pre[class*="language-text"] {
     background-color: transparent;
-    color: inherit;
+    color: #666;
     font-size: medium;
   }
 `;
@@ -68,13 +77,57 @@ const Footer = styled.footer`
   height: 6rem;
 `;
 
-const Content = styled.div`
-  width: 60%;
-  max-width: 728px;
+const MainContainer = styled.div`
+  margin-left: 0;
+  min-height: 100vh;
+  position: relative;
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  max-width: 1300px;
   margin: 0 auto;
+  padding: 0;
+  gap: 7rem;
+  min-height: calc(100vh - 100px);
 
   ${media.tablet`
-    width: 80%;
+    flex-direction: column;
+    min-height: auto;
+    padding: 0 1rem;
+  `}
+`;
+
+const TagsContainer = styled.div`
+  width: 220px;
+  padding: 2rem 0;
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  height: fit-content;
+  max-height: 70vh;
+  overflow-y: auto;
+  margin-left: 1rem;
+
+  ${media.tablet`
+    width: 100%;
+    position: static;
+    padding: 1rem 0;
+    transform: none;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1rem;
+    max-height: none;
+    margin-left: 0;
+  `}
+`;
+
+const Content = styled.div`
+  flex: 1;
+  padding: 2rem;
+  max-width: 800px;
+
+  ${media.tablet`
+    padding: 1rem 0;
   `}
 `;
 
@@ -95,8 +148,18 @@ class Layout extends Component {
         render={(data) => (
           <>
             <Header title={data.site.siteMetadata.title} />
-            <Content>{children}</Content>
-            <Footer />
+            <MainContainer>
+              <ContentWrapper>
+                <TagsContainer>
+                  <Search />
+                  <Tags />
+                </TagsContainer>
+                <Content>
+                  {children}
+                  <Footer />
+                </Content>
+              </ContentWrapper>
+            </MainContainer>
             <GlobalStyles />
           </>
         )}

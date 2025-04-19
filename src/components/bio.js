@@ -5,9 +5,8 @@ import Image from 'gatsby-image';
 
 import media from '../utils/media';
 import github from '../images/social/github.svg';
-import instagram from '../images/social/instagram.svg';
+import linkedin from '../images/social/linkedin.svg';
 import mail from '../images/social/mail.svg';
-import cv from '../images/social/cv.svg';
 
 const Container = styled.div`
   display: flex;
@@ -75,11 +74,11 @@ const Bio = () => (
               <SocialIcon src={github} alt="github" />
             </a>
             <a
-              href={`https://instagram.com/${social.instagram}`}
+              href={`https://www.linkedin.com/in/${social.linkedin}`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <SocialIcon src={instagram} alt="instagram" />
+              <SocialIcon src={linkedin} alt="linkedin" />
             </a>
             <a
               href={`mailto:${social.mail}`}
@@ -87,13 +86,6 @@ const Bio = () => (
               rel="noopener noreferrer"
             >
               <SocialIcon src={mail} alt="mail" />
-            </a>
-            <a
-              href={`${social.notion}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <SocialIcon src={cv} alt="notion" />
             </a>
           </TextContainer>
           <ImageContainer>
@@ -120,9 +112,8 @@ const bioQuery = graphql`
         authorTagline
         social {
           github
-          instagram
+          linkedin
           mail
-          notion
         }
       }
     }
