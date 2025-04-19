@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import {
+  cardBackgroundColor,
+  cardBorderColor,
+  textColor,
+} from '../utils/theme';
 
 const PostListContainer = styled.div`
   display: flex;
@@ -9,14 +14,18 @@ const PostListContainer = styled.div`
 `;
 
 const PostItem = styled.article`
-  border: 1px solid #eee;
+  border: 1px solid ${cardBorderColor};
   border-radius: 8px;
   padding: 2rem;
   transition: all 0.2s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+  background-color: ${cardBackgroundColor};
 
   &:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    box-shadow: ${(props) =>
+      props.theme.mode === 'light'
+        ? '0 5px 15px rgba(0, 0, 0, 0.07)'
+        : '0 5px 15px rgba(255, 255, 255, 0.07)'};
     transform: translateY(-3px);
   }
 `;
@@ -27,12 +36,13 @@ const PostTitle = styled.h2`
   line-height: 1.4;
 
   a {
-    color: #333;
+    color: ${(props) => (props.theme.mode === 'light' ? '#333' : '#f0f0f0')};
     text-decoration: none;
     transition: color 0.2s ease;
 
     &:hover {
-      color: #3498db;
+      color: ${(props) =>
+        props.theme.mode === 'light' ? '#3498db' : '#64b5f6'};
     }
   }
 `;
@@ -42,7 +52,7 @@ const PostMeta = styled.div`
   align-items: center;
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
-  color: #777;
+  color: ${(props) => (props.theme.mode === 'light' ? '#777' : '#d0d0d0')};
 `;
 
 const PostDate = styled.time`
@@ -66,21 +76,23 @@ const PostTags = styled.div`
 const PostTag = styled(Link)`
   font-size: 0.85rem;
   padding: 0.2rem 0.6rem;
-  background-color: #f5f5f5;
-  color: #666;
+  background-color: ${(props) =>
+    props.theme.mode === 'light' ? '#f5f5f5' : '#444'};
+  color: ${(props) => (props.theme.mode === 'light' ? '#666' : '#e0e0e0')};
   border-radius: 3px;
   text-decoration: none;
   transition: all 0.2s ease;
 
   &:hover {
-    background-color: #3498db;
+    background-color: ${(props) =>
+      props.theme.mode === 'light' ? '#3498db' : '#64b5f6'};
     color: white;
   }
 `;
 
 const PostExcerpt = styled.p`
   margin: 0;
-  color: #555;
+  color: ${(props) => (props.theme.mode === 'light' ? '#555' : '#d0d0d0')};
   line-height: 1.6;
   font-size: 1.1rem;
 `;
@@ -88,14 +100,14 @@ const PostExcerpt = styled.p`
 const ReadMore = styled(Link)`
   display: inline-block;
   margin-top: 1.2rem;
-  color: #3498db;
+  color: ${(props) => (props.theme.mode === 'light' ? '#3498db' : '#64b5f6')};
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
   transition: all 0.2s ease;
 
   &:hover {
-    color: #2980b9;
+    color: ${(props) => (props.theme.mode === 'light' ? '#2980b9' : '#90caf9')};
     text-decoration: underline;
   }
 

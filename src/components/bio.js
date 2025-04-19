@@ -50,10 +50,22 @@ const TagLine = styled.sub`
   display: block;
 `;
 
+const SocialIconWrapper = styled.a`
+  display: inline-block;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+`;
+
 const SocialIcon = styled.img`
   height: 2.5rem;
   width: 2.5rem;
   padding: 1.5rem 1rem;
+  filter: ${(props) =>
+    props.theme.mode === 'dark' ? 'brightness(1.8)' : 'none'};
+  transition: all 0.3s ease;
 `;
 
 const Bio = () => (
@@ -66,27 +78,30 @@ const Bio = () => (
           <TextContainer>
             <Name>{author}</Name>
             <TagLine>{authorTagline}</TagLine>
-            <a
+            <SocialIconWrapper
               href={`https://github.com/${social.github}`}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub 프로필"
             >
               <SocialIcon src={github} alt="github" />
-            </a>
-            <a
+            </SocialIconWrapper>
+            <SocialIconWrapper
               href={`https://www.linkedin.com/in/${social.linkedin}`}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn 프로필"
             >
               <SocialIcon src={linkedin} alt="linkedin" />
-            </a>
-            <a
+            </SocialIconWrapper>
+            <SocialIconWrapper
               href={`mailto:${social.mail}`}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="이메일 보내기"
             >
               <SocialIcon src={mail} alt="mail" />
-            </a>
+            </SocialIconWrapper>
           </TextContainer>
           <ImageContainer>
             <Image fixed={data.avatar.childImageSharp.fixed} alt={author} />

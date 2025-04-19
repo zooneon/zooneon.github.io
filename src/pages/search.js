@@ -16,7 +16,7 @@ const SearchResultHeader = styled.div`
 
 const SearchTitle = styled.h1`
   font-size: 2.2rem;
-  color: #333;
+  color: ${(props) => (props.theme.mode === 'light' ? '#333' : '#f5f5f5')};
   margin-bottom: 1rem;
 
   ${media.tablet`
@@ -25,17 +25,18 @@ const SearchTitle = styled.h1`
 `;
 
 const SearchResultInfo = styled.p`
-  color: #666;
+  color: ${(props) => (props.theme.mode === 'light' ? '#666' : '#d0d0d0')};
   font-size: 1.3rem;
 `;
 
 const NoResults = styled.div`
   margin: 4rem 0;
-  color: #666;
+  color: ${(props) => (props.theme.mode === 'light' ? '#666' : '#d0d0d0')};
 
   h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
+    color: ${(props) => (props.theme.mode === 'light' ? '#333' : '#f0f0f0')};
   }
 
   p {

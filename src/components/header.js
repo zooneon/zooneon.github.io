@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 import StyledLink from '../utils/styled-link';
 import media from '../utils/media';
+import ThemeToggle from './ThemeToggle';
+import { headerBackgroundColor } from '../utils/theme';
 
 const Container = styled.nav`
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
@@ -14,12 +16,22 @@ const Container = styled.nav`
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: white;
-  transition: box-shadow 0.3s ease;
+  background-color: ${headerBackgroundColor};
+  transition: all 0.3s ease;
 
   &.scrolled {
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
   }
+`;
+
+const HeaderContent = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 2rem;
+  position: relative;
+  justify-content: center;
 `;
 
 const Title = styled.h1`
@@ -28,10 +40,18 @@ const Title = styled.h1`
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   margin: 0;
+  text-align: center;
 
   ${media.phone`
-    text-align: center;
+    font-size: 1.4rem;
   `}
+`;
+
+const ThemeToggleWrapper = styled.div`
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
 `;
 
 const Header = ({ title }) => {
@@ -54,9 +74,14 @@ const Header = ({ title }) => {
 
   return (
     <Container className={scrolled ? 'scrolled' : ''}>
-      <StyledLink to={'/'}>
-        <Title>{title}</Title>
-      </StyledLink>
+      <HeaderContent>
+        <StyledLink to={'/'}>
+          <Title>{title}</Title>
+        </StyledLink>
+        <ThemeToggleWrapper>
+          <ThemeToggle />
+        </ThemeToggleWrapper>
+      </HeaderContent>
     </Container>
   );
 };

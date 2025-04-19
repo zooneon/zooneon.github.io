@@ -23,7 +23,10 @@ class BlogPostTemplate extends React.Component {
             <Title>{post.frontmatter.title}</Title>
             <sub
               css={`
-                color: rgba(0, 0, 0, 0.8);
+                color: ${(props) =>
+                  props.theme.mode === 'light'
+                    ? 'rgba(0, 0, 0, 0.8)'
+                    : 'rgba(255, 255, 255, 0.85)'};
               `}
             >
               <span>Posted on {post.frontmatter.date}</span>

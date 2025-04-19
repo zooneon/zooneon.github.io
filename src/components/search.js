@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { navigate } from 'gatsby';
 import styled from 'styled-components';
 import media from '../utils/media';
+import {
+  tagBackgroundColor,
+  tagTextColor,
+  searchInputBackgroundColor,
+} from '../utils/theme';
 
 const SearchContainer = styled.div`
   margin: 2rem 0;
@@ -14,7 +19,8 @@ const SearchForm = styled.form`
   display: flex;
   border-radius: 6px;
   overflow: hidden;
-  border: 1px solid #eee;
+  border: 1px solid
+    ${(props) => (props.theme.mode === 'light' ? '#eee' : '#444')};
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 
@@ -28,14 +34,14 @@ const SearchInput = styled.input`
   flex: 1;
   padding: 0.7rem 1rem;
   border: none;
-  background: #f5f5f5;
+  background: ${searchInputBackgroundColor};
   font-size: 1.4rem;
   outline: none;
-  color: #444;
+  color: ${tagTextColor};
   font-weight: 500;
 
   &::placeholder {
-    color: #aaa;
+    color: ${(props) => (props.theme.mode === 'light' ? '#aaa' : '#777')};
   }
 
   ${media.tablet`
@@ -44,7 +50,7 @@ const SearchInput = styled.input`
 `;
 
 const SearchButton = styled.button`
-  background: #444;
+  background: ${(props) => (props.theme.mode === 'light' ? '#444' : '#555')};
   color: white;
   border: none;
   padding: 0 1.4rem;
@@ -59,7 +65,7 @@ const SearchButton = styled.button`
   gap: 5px;
 
   &:hover {
-    background: #333;
+    background: ${(props) => (props.theme.mode === 'light' ? '#333' : '#666')};
     transform: translateX(2px);
   }
 

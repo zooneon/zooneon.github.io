@@ -12,7 +12,7 @@ const Title = styled.h3`
   font-weight: 800;
   font-size: 2.6rem;
   margin: 6rem 0 2rem;
-  color: #333;
+  color: ${(props) => (props.theme.mode === 'light' ? '#333' : '#f0f0f0')};
 
   ${media.phone`
     margin: 3rem 0 1.5rem;

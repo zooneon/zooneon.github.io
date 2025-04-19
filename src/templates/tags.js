@@ -8,25 +8,26 @@ import { PostList } from '../components/PostList';
 const TagHeader = styled.div`
   margin-bottom: 3rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid
+    ${(props) => (props.theme.mode === 'light' ? '#eee' : '#444')};
 `;
 
 const TagTitle = styled.h1`
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: ${(props) => (props.theme.mode === 'light' ? '#333' : '#f5f5f5')};
   display: flex;
   align-items: center;
   gap: 0.8rem;
 `;
 
 const TagSymbol = styled.span`
-  color: #3498db;
+  color: ${(props) => (props.theme.mode === 'light' ? '#3498db' : '#64b5f6')};
   font-weight: normal;
 `;
 
 const TagDescription = styled.p`
-  color: #777;
+  color: ${(props) => (props.theme.mode === 'light' ? '#777' : '#d0d0d0')};
   font-size: 1.2rem;
   margin: 0;
 `;
