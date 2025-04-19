@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import styled from 'styled-components';
 import { PostList } from '../components/PostList';
 
@@ -39,7 +39,6 @@ const TagTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <SEO title={`"${tag}" 태그의 포스트 목록`} />
       <TagHeader>
         <TagTitle>
           <TagSymbol>#</TagSymbol>
@@ -50,6 +49,11 @@ const TagTemplate = ({ data, pageContext }) => {
       <PostList posts={edges} />
     </Layout>
   );
+};
+
+export const Head = ({ pageContext }) => {
+  const { tag } = pageContext;
+  return <Seo title={`"${tag}" 태그의 포스트 목록`} />;
 };
 
 export default TagTemplate;

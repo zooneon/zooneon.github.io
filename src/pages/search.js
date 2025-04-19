@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import { PostList } from '../components/PostList';
 import styled from 'styled-components';
 import media from '../utils/media';
@@ -82,7 +82,6 @@ const SearchPage = ({ data, location }) => {
 
   return (
     <Layout>
-      <SEO title={searchQuery ? `"${searchQuery}" 검색 결과` : '검색'} />
       <SearchPageContainer>
         {searchQuery ? (
           <>
@@ -110,6 +109,12 @@ const SearchPage = ({ data, location }) => {
       </SearchPageContainer>
     </Layout>
   );
+};
+
+export const Head = ({ location }) => {
+  const params = new URLSearchParams(location.search);
+  const query = params.get('q') || '';
+  return <Seo title={query ? `"${query}" 검색 결과` : '검색'} />;
 };
 
 export default SearchPage;

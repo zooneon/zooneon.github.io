@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 
 const Container = styled.div`
   text-align: center;
@@ -10,7 +10,6 @@ const Container = styled.div`
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
     <Container>
       <span
         css={`
@@ -28,5 +27,7 @@ const NotFoundPage = () => (
     </Container>
   </Layout>
 );
+
+export const Head = () => <Seo title="404: Not found" />;
 
 export default NotFoundPage;

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import Bio from '../components/bio';
 import { PostList } from '../components/PostList';
 import media from '../utils/media';
@@ -25,10 +25,6 @@ class BlogIndex extends Component {
     const posts = data.allMarkdownRemark.edges;
     return (
       <Layout>
-        <SEO
-          title="zooneon's dev log"
-          keywords={[`gatsby`, `blog`, `spring`, `zooneon`]}
-        />
         <Bio />
         <main>
           <Title>Latest Posts</Title>
@@ -38,6 +34,13 @@ class BlogIndex extends Component {
     );
   }
 }
+
+export const Head = () => (
+  <Seo
+    title="zooneon's dev log"
+    keywords={[`gatsby`, `blog`, `spring`, `zooneon`]}
+  />
+);
 
 export default BlogIndex;
 

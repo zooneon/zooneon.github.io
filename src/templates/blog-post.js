@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import Utterances from '../components/utterances';
 import { Container, Title, LinkList, Header } from './post-styles';
 import Share from '../components/share';
@@ -17,7 +17,6 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={post.frontmatter.title} description={post.excerpt} />
         <Container>
           <Header>
             <Title>{post.frontmatter.title}</Title>
@@ -71,6 +70,11 @@ class BlogPostTemplate extends React.Component {
 }
 
 export default BlogPostTemplate;
+
+export const Head = ({ data }) => {
+  const post = data.markdownRemark;
+  return <Seo title={post.frontmatter.title} description={post.excerpt} />;
+};
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
